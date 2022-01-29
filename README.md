@@ -1,3 +1,7 @@
+#NoteToSelf - over view of full project 
+
+Project Outline
+
 ## Phase 1: Perform Variant Aware Alignment on AMP-PD RNA Seq Data
 
 ### Overview
@@ -17,7 +21,7 @@ A workspace was created on Terra.bio to carry out this analysis. There are a tot
 
 ### Scripts:
 - The scripts for each workflow were written in workflow description language (wdl)
-- The scripts can be found in the following folder: Link /insert hyperlink/ 
+- The scripts can be found in the following folder: Link /insert hyperlink/ #NoteToSelf - add link 
   
 ### Input Files:
 - Per Sample Input 
@@ -37,6 +41,7 @@ A workspace was created on Terra.bio to carry out this analysis. There are a tot
 - Junction File 
 - Bigwig files per chromosome 
 
+#NoteToSelf - show small example of the data 
 
 ## Phase 2: Use the output of Variant Aware Alignment to create informative visualizations
 
@@ -53,7 +58,7 @@ The junction and bigwig files that were produced using variant aware alignment w
 - deepTools bigwig to wig 
 - datamash 
   
-#note to self - group might be confusing, change the way that line is worded 
+#NoteToSelf- group might be confusing, change the way that line is worded 
 
 The grouped files can be divided into 6 categories, with 22 slices or individual groups. 
 
@@ -91,18 +96,29 @@ The grouped files can be divided into 6 categories, with 22 slices or individual
     - SVM24T1
     - SVM36T1
 
+#NoteToSelf - add examples of a data table for cov and counts
+
 - **Step 3** The data tables were then imported into a mongoDB database. 
   - Database Name: AMP22A
   - Collections: `coverage` and `counts`
 
 ## Phase 3: Visualization of the Data
 
+### Overview 
+- The coverage and junction files will be used as input data to create a sashimi plot. 
+- This plot will be created using vega.js, an application in which you can define interactive vizualizations in JSON. These plot can be hosted on a web browser. 
 
+#NoteToSelf- add an image of a sashimi plot, maybe use bioRender to create it 
+
+### Script:
+- The vega script for creating a sashimi plot can be found here: /Link/ #NoteToSelf - add link 
+
+
+#NoteToSelf - 
 ####
 Pending Topics:
 - Terra
 - Docker
-- Vega
 
 Scripts to Upload: 
 - wdl 
