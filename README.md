@@ -7,12 +7,13 @@ This project can be divided into three phases:
 
 3 Studies were included in this analysis:
 
-|   | Number of Samples Sucessfully Processed  | Notes | 
-|---|---|---|
-| BioFIND | 165 |   |
-| PDBP | 3296 |   |
-| PPMI | 4622 | Phase 1 of this cohort was carried out locally  |
+|   | Number of Samples Sucessfully Processed  |
+|---|---|
+| BioFIND | 165 |
+| PDBP | 3296 |   
+| PPMI | 4622 | 
 
+Note: Phase 1 of the analysis of PPMI data was carried out locally.
 
 ## Phase 1: Running the Variant Aware Alignment Workspace on AMP-PD RNA Seq Data
 
