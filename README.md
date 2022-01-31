@@ -1,6 +1,7 @@
-#NoteToSelf - over view of full project 
+AMP-PD Data Processing Pipeline
 
-Project Outline
+Studies Included: 
+The RNA whole-transcriptome data of 3 studies were included in this analytical pipeline. 
 
 ## Phase 1: Perform Variant Aware Alignment on AMP-PD RNA Seq Data
 
@@ -21,7 +22,7 @@ A workspace was created on Terra.bio to carry out this analysis. There are a tot
 
 ### Scripts:
 - The scripts for each workflow were written in workflow description language (wdl)
-- The scripts can be found in the following folder: Link /insert hyperlink/ #NoteToSelf - add link 
+- The scripts can be found in the following folder: [Link](https://github.com/RamiyaSiva/Sashimi/tree/7b615c42712411b3d41e2104d3e9a89b1af4ee95/scripts/wdl) 
   
 ### Input Files:
 - Per Sample Input 
@@ -38,10 +39,17 @@ A workspace was created on Terra.bio to carry out this analysis. There are a tot
 | PDBP | 3296 | 
 
 ### Output Files Per Sample:
-- Junction File 
-- Bigwig files per chromosome 
+- Junction File
+  - Columns: chromosome, start position, end position, period, score, strand
 
-#NoteToSelf - show small example of the data 
+    <img src="https://res.cloudinary.com/dogejctwp/image/upload/v1643638108/amp/Screen_Shot_2022-01-31_at_7.33.18_PM_jxypva.png" alt="drawing" height="200"/>
+
+- Bigwig files seperated by chromosome:
+  - Bigwig files are compressed binary files. They can be converted to the human-readable wig format using the deepTools `bigWigToWig` command.
+  - Contain header lines for each section of the genome (e.g. `#bedGraph section chr10:55700-365900`)
+  - Columns: chromosome, start position, end position, coverage
+    
+    <img src="https://res.cloudinary.com/dogejctwp/image/upload/v1643638108/amp/Screen_Shot_2022-01-31_at_7.36.37_PM_izbdjm.png" alt="drawing" height="200"/>
 
 ## Phase 2: Use the output of Variant Aware Alignment to create informative visualizations
 
@@ -49,7 +57,7 @@ A workspace was created on Terra.bio to carry out this analysis. There are a tot
 The junction and bigwig files that were produced using variant aware alignment were used as inputs for this phase of the project. 
 
 - **Step 1a** The junction files were grouped according to samples that shared a particular characteristic(Cases vs. Controls, Sex etc). This resulted in a file in which rows were with a junction position and columns represented the counts values for a sample. The number of columns corresponded with the number of samples in a particular group. 
-- **Step 2a** The median value of counts for each junction was calculated for each group. 
+- **Step 2a** The median value of counts for each junction position was calculated on the grouped files using `datamash`. 
 
 - **Step 1b** Similar to the junction files, the coverage files were grouped according to samples that shared a particular characteristic(Cases vs. Controls, Sex etc). This resulted in one large file in which rows were a particular region in chromosome and columns were coverage per sample. 
 - **Step 2b** The median value of coverage for each region was calculated on the grouped files using `datamash`. 
@@ -96,7 +104,14 @@ The grouped files can be divided into 6 categories, with 22 slices or individual
     - SVM24T1
     - SVM36T1
 
-#NoteToSelf - add examples of a data table for cov and counts
+Formatted Table of Junction Counts: 
+
+  <img src="https://res.cloudinary.com/dogejctwp/image/upload/v1643639754/amp/Screen_Shot_2022-01-31_at_8.05.21_PM_cdi1wi.png" alt="drawing" height="200"/>
+
+Formatted Table of Coverage: 
+
+  <img src="https://res.cloudinary.com/dogejctwp/image/upload/v1643639755/amp/Screen_Shot_2022-01-31_at_8.04.43_PM_gacs97.png" alt="drawing" height="200"/>
+
 
 - **Step 3** The data tables were then imported into a mongoDB database. 
   - Database Name: AMP22A
@@ -111,7 +126,7 @@ The grouped files can be divided into 6 categories, with 22 slices or individual
 #NoteToSelf- add an image of a sashimi plot, maybe use bioRender to create it 
 
 ### Script:
-- The vega script for creating a sashimi plot can be found here: /Link/ #NoteToSelf - add link 
+- The vega script for creating a sashimi plot can be found here: [Link](https://github.com/RamiyaSiva/Sashimi/tree/7b615c42712411b3d41e2104d3e9a89b1af4ee95/scripts/vega) 
 
 
 #NoteToSelf - 
@@ -119,9 +134,6 @@ The grouped files can be divided into 6 categories, with 22 slices or individual
 Pending Topics:
 - Terra
 - Docker
+- Overview at start of readme
 
-Scripts to Upload: 
-- wdl 
-- vega scripts
-- scripts for formatting 
 
