@@ -1,4 +1,4 @@
-# AMP-PD Data Processing Pipeline
+# AMP-PD Allele Aware RNA Analysis
 
 This project can be divided into three phases: 
 1. Running the Variant Aware Alignment Workspace on Terra 
