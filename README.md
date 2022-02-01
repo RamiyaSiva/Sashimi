@@ -81,10 +81,10 @@ The junction and bigwig files that were produced using the variant aware alignme
 - **Step 3** The files were formatted to include category and slice information. 
 
   - The grouped files can be divided into 6 categories, with 22 slices or individual groups. 
-    - ALL_SAMPLES
-      - ALL_SAMPLES
+    - All
+      - All
 
-    - GENETIC_CONDITION
+    - Genetics
       - GBA_NEG
       - GBA_POS
       - LRRK_NEG
@@ -94,20 +94,20 @@ The junction and bigwig files that were produced using the variant aware alignme
       - SNCA_NEG
       - SNCA_POS
 
-    - SEX
-      - MALE
-      - FEMALE
+    - Sex
+      - Male
+      - Female
 
-    - STATUS
-      - CASES
-      - CONTROLS
+    - Status
+      - Cases
+      - Controls
 
-    - STUDY
-      - BIOFIND
+    - Study
+      - BioFIND
       - PDBP
       - PPMI
 
-    - TIMEPOINT
+    - Month
       - BLM0T1
       - SVM6T1
       - SVM12T1
