@@ -108,12 +108,12 @@ The junction and bigwig files that were produced using the variant aware alignme
       - PPMI
 
     - Month
-      - BLM0T1
-      - SVM6T1
-      - SVM12T1
-      - SVM18T1
-      - SVM24T1
-      - SVM36T1
+      - M0
+      - M06
+      - M12
+      - M18
+      - M24
+      - M36
 
 Formatted Table of Junction Counts: 
 
